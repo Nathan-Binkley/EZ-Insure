@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>Info for {{data['username']}} + others</title>
+<html>
+    <body>
+        <h1> New Entry </h1>
+        <li> {{data['username']}} </li>
+        <li> {{data['email']}} </li>
+        <li> {{data['password']}} </li>
+        <div>
+        <h1> All Entries </h1>
+        {% block content %}
+            {% for profile in profiles.keys() %}
+                <li> {{profiles[profile]['username']}}  </li>
+                <li> {{profiles[profile]['email']}}  </li>
+                <li> {{profiles[profile]['password']}} </li>
+                <br>
+            {% endfor %}
+        {% endblock content %}
+        </div>
+    </body>
+</html>
